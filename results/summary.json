@@ -1,0 +1,46 @@
+[
+  {
+    "model": "gpt-6-luna",
+    "prompt": "v1",
+    "n": 30,
+    "valid_json_rate": 1.0,
+    "exact_match_rate": 0.3333333333333333,
+    "avg_jaccard": 0.8251984126984128,
+    "avg_seconds": 2.237394161032959,
+    "total_cost_usd": 0.0036504000000000003,
+    "model_label": "cloud"
+  },
+  {
+    "model": "gpt-6-luna",
+    "prompt": "v2",
+    "n": 30,
+    "valid_json_rate": 1.0,
+    "exact_match_rate": 0.36666666666666664,
+    "avg_jaccard": 0.8359126984126984,
+    "avg_seconds": 2.349629597367069,
+    "total_cost_usd": 0.0035799000000000004,
+    "model_label": "cloud"
+  },
+  {
+    "model": "llama3.2:3b",
+    "prompt": "v1",
+    "n": 30,
+    "valid_json_rate": 1.0,
+    "exact_match_rate": 0.0,
+    "avg_jaccard": 0.39976190476190465,
+    "avg_seconds": 12.259820461734003,
+    "total_cost_usd": 0.0,
+    "model_label": "ollama-local"
+  },
+  {
+    "model": "llama3.2:3b",
+    "prompt": "v2",
+    "n": 30,
+    "valid_json_rate": 1.0,
+    "exact_match_rate": 0.0,
+    "avg_jaccard": 0.5921825396825396,
+    "avg_seconds": 13.413407856533983,
+    "total_cost_usd": 0.0,
+    "model_label": "ollama-local"
+  }
+]

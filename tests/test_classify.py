@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "starter"))
 
 import classify  # noqa: E402  (must come after sys.path mutation)
 from classify import ReviewClassification, cost_usd, PRICES
+from evaluate import exact_match, jaccard  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -43,10 +44,13 @@ class TestCostUsd:
         with patch.object(classify, "MODEL", "unknown/model-xyz"):
             assert cost_usd(999_999, 999_999) == 0.0
 
-    def test_all_known_models_present_in_prices(self):
-        """Sanity: the three listed models all have positive prices."""
-        for model, (in_p, out_p) in PRICES.items():
-            assert in_p > 0 and out_p > 0, f"{model} has a zero price entry"
+    def test_cloud_model_has_positive_price(self):
+        in_p, out_p = PRICES[classify.MODEL]
+        assert in_p > 0 and out_p > 0
+
+    def test_local_model_is_free(self):
+        in_p, out_p = PRICES["llama3.2:3b"]
+        assert in_p == 0.0 and out_p == 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -71,13 +75,46 @@ class TestReviewClassificationModel:
 
     def test_invalid_category_raises(self):
         with pytest.raises(ValidationError):
-            ReviewClassification(categories=["cleanliness"], summary="Rooms were spotless")
+            ReviewClassification(categories=["parking"], summary="Rooms were spotless")
 
     def test_missing_summary_raises(self):
         with pytest.raises(ValidationError):
             ReviewClassification(categories=["other"])
 
     def test_all_valid_categories_accepted(self):
-        for cat in ("staff", "location", "food", "other"):
+        categories = ("staff", "location", "food", "amenities", "room", "cleanliness", "price", "other")
+        for cat in categories:
             rc = ReviewClassification(categories=[cat], summary="test")
             assert rc.categories == [cat]
+
+
+# ---------------------------------------------------------------------------
+# evaluate.py metrics
+# ---------------------------------------------------------------------------
+
+class TestExactMatch:
+
+    def test_identical_sets_match(self):
+        assert exact_match({"staff", "food"}, {"staff", "food"})
+
+    def test_different_sets_do_not_match(self):
+        assert not exact_match({"staff"}, {"staff", "food"})
+
+    def test_both_empty_match(self):
+        assert exact_match(set(), set())
+
+
+class TestJaccard:
+
+    def test_identical_sets_is_one(self):
+        assert jaccard({"staff", "food"}, {"staff", "food"}) == 1.0
+
+    def test_disjoint_sets_is_zero(self):
+        assert jaccard({"staff"}, {"food"}) == 0.0
+
+    def test_partial_overlap(self):
+        # {staff, food} vs {staff, room} -> intersection 1, union 3
+        assert jaccard({"staff", "food"}, {"staff", "room"}) == pytest.approx(1 / 3)
+
+    def test_both_empty_is_one(self):
+        assert jaccard(set(), set()) == 1.0

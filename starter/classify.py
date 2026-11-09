@@ -7,8 +7,10 @@ from pathlib import Path
 from typing import Literal
 
 from dotenv import load_dotenv
-from openai import OpenAI, OpenAIError
+from openai import OpenAI
 from pydantic import BaseModel, Field, ValidationError
+
+from prompts import PROMPTS
 
 load_dotenv()
 
@@ -17,6 +19,12 @@ MODEL = "gpt-6-luna"
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "hotels.json"
 LIMIT = 10
+
+# USD per 1M tokens: (input, output). Local models cost nothing.
+PRICES: dict[str, tuple[float, float]] = {
+    "gpt-6-luna": (0.10, 0.50),
+    "llama3.2:3b": (0.0, 0.0),
+}
 
 
 class ReviewClassification(BaseModel):
@@ -27,28 +35,19 @@ class ReviewClassification(BaseModel):
     summary: str = Field(description="Short summary of the review, up to 15 words.")
 
 
-SYSTEM_PROMPT = (
-    "You classify hotel guest reviews by topic. "
-    "Respond only with JSON that matches the given schema. "
-    "categories: staff — service, reception, friendliness of personnel; "
-    "location — position, transport, nearby attractions, distance to beach/centre; "
-    "food — breakfast, restaurant, meals; "
-    "other — anything else (room, price, cleanliness, facilities). "
-    "A review can belong to multiple categories — list all that apply. "
-    "Never invent topics the review does not discuss."
-)
+SYSTEM_PROMPT = PROMPTS["v1"]
 
 
-def classify(client: OpenAI, text: str) -> dict:
+def classify(client: OpenAI, text: str, system_prompt: str = SYSTEM_PROMPT, model: str = MODEL) -> dict:
     start = time.perf_counter()
     schema = ReviewClassification.model_json_schema()
     schema["additionalProperties"] = False
     schema["required"] = list(schema.get("properties", {}).keys())
     try:
         r = client.chat.completions.create(
-            model=MODEL,
+            model=model,
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": text},
             ],
             response_format={
@@ -60,7 +59,7 @@ def classify(client: OpenAI, text: str) -> dict:
                 },
             },
         )
-    except OpenAIError as e:
+    except Exception as e:  # noqa: BLE001 - any transport/provider failure is per-item, not fatal
         return {
             "ok": False,
             "error": f"{type(e).__name__}: {e}",
@@ -84,8 +83,8 @@ def classify(client: OpenAI, text: str) -> dict:
     return result
 
 
-def cost_usd(input_tokens: int, output_tokens: int) -> float:
-    in_p, out_p = 0.10, 0.50
+def cost_usd(input_tokens: int, output_tokens: int, model: str | None = None) -> float:
+    in_p, out_p = PRICES.get(model if model is not None else MODEL, (0.0, 0.0))
     return (input_tokens * in_p + output_tokens * out_p) / 1_000_000
 
 

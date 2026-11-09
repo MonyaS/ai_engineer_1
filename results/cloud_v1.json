@@ -1,0 +1,530 @@
+[
+  {
+    "id": "are_dubai_al_maha_desert_resort_85",
+    "gold": [
+      "food",
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.511707320998539,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_bustan_centre_residence_12",
+    "gold": [
+      "cleanliness",
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.4062829189933836,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_159",
+    "gold": [
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.2205899879991193,
+    "pred": [
+      "amenities",
+      "location",
+      "price",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_97",
+    "gold": [
+      "amenities",
+      "food",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.344863757993153,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_53",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "staff"
+    ],
+    "seconds": 1.796076959995844,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_manzil_hotel_34",
+    "gold": [
+      "amenities",
+      "location",
+      "staff"
+    ],
+    "seconds": 1.8878674459992908,
+    "pred": [
+      "amenities",
+      "location",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_maha_desert_resort_66",
+    "gold": [
+      "amenities",
+      "food",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.643141063999792,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_maha_desert_resort_35",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 3.2293146590018296,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_180",
+    "gold": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.0814119420028874,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_bustan_rotana_dubai_13",
+    "gold": [
+      "location",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.3179157600025064,
+    "pred": [
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_bustan_rotana_dubai_9",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.340612195999711,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_maha_desert_resort_48",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "room"
+    ],
+    "seconds": 2.703403421000985,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_43",
+    "gold": [
+      "amenities",
+      "location",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.6833973190005054,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_72",
+    "gold": [
+      "amenities",
+      "price",
+      "staff"
+    ],
+    "seconds": 1.9796279029978905,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_park_hotel_44",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 1.7161162970005535,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_bustan_rotana_dubai_2",
+    "gold": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.6534869030001573,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_3",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 1.783660751003481,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_175",
+    "gold": [
+      "amenities",
+      "cleanliness",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.6034232689999044,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_47",
+    "gold": [
+      "amenities",
+      "food",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 1.7073157020058716,
+    "pred": [
+      "amenities",
+      "food",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_235",
+    "gold": [
+      "price",
+      "staff"
+    ],
+    "seconds": 2.027861516995472,
+    "pred": [
+      "price",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_165",
+    "gold": [
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 2.544633793004323,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "other",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_admiral_plaza_hotel_12",
+    "gold": [
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.449231525999494,
+    "pred": [
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_manzil_hotel_75",
+    "gold": [
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 1.6229695869988063,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_181",
+    "gold": [
+      "food",
+      "other",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 3.5721992409962695,
+    "pred": [
+      "cleanliness",
+      "food",
+      "location",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_12",
+    "gold": [
+      "location"
+    ],
+    "seconds": 1.4453739230011706,
+    "pred": [
+      "location"
+    ]
+  },
+  {
+    "id": "are_dubai_al_manzil_hotel_67",
+    "gold": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "room",
+      "staff"
+    ],
+    "seconds": 2.015157570000156,
+    "pred": [
+      "amenities",
+      "cleanliness",
+      "food",
+      "location",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_qasr_at_madinat_jumeirah_36",
+    "gold": [
+      "amenities",
+      "room",
+      "staff"
+    ],
+    "seconds": 1.916544444997271,
+    "pred": [
+      "amenities",
+      "location",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_5",
+    "gold": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ],
+    "seconds": 1.7211134899989702,
+    "pred": [
+      "amenities",
+      "food",
+      "location",
+      "price",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_al_maha_desert_resort_46",
+    "gold": [
+      "amenities",
+      "food",
+      "price",
+      "room",
+      "staff"
+    ],
+    "seconds": 1.8750322490013787,
+    "pred": [
+      "amenities",
+      "food",
+      "price",
+      "room",
+      "staff"
+    ]
+  },
+  {
+    "id": "are_dubai_arabian_courtyard_hotel_spa_94",
+    "gold": [
+      "cleanliness",
+      "food",
+      "price"
+    ],
+    "seconds": 2.321491912000056,
+    "pred": [
+      "cleanliness",
+      "food",
+      "location",
+      "price"
+    ]
+  }
+]

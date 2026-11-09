@@ -163,3 +163,5 @@ cython_debug/
 .idea/
 
 data/raw
+data/_sample_full_scratch.txt
+scripts/build_labeled_sample.py
